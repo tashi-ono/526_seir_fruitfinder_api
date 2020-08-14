@@ -13,7 +13,7 @@ Library.create([
 ])
 
 Comment.create([
-    {username: "nscoen", comment: "Love this library!", library_id: 1}, 
-    {username: "user75", comment: "Cool stuff in this one!", library_id: 1},
-    {username: "nscoen", comment: "Another great find!", library_id: 2}
+    {username: "nscoen", user_comments: "Love this library!", library_id: 1}, 
+    {username: "user75", user_comments: "Cool stuff in this one!", library_id: 1},
+    {username: "nscoen", user_comments: "Another great find!", library_id: 2}
 ])
