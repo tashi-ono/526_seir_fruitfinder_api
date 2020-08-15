@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
   # sorting is not working when a user updates a comment
   # updated comment will go to the bottom of the comments list
   def index
-    @comments = Comment.all.order('id asc')
+    @comments = Comment.all
     render json: @comments
   end
 
