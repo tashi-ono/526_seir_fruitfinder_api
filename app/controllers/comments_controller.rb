@@ -2,9 +2,10 @@ class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :update, :destroy]
 
   # GET /comments
+  # sorting is not working when a user updates a comment
+  # updated comment will go to the bottom of the comments list
   def index
-    @comments = Comment.all
-
+    @comments = Comment.all.order('id asc')
     render json: @comments
   end
 
