@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'welcome#index'
-  resources :comments, only: [:index]
+  resources :comments, except: [:create]
   resources :libraries do
     resources :comments, except: [:index]
   end

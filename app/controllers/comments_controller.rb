@@ -2,9 +2,10 @@ class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :update, :destroy]
 
   # GET /comments
+  # sorting is not working when a user updates a comment
+  # updated comment will go to the bottom of the comments list
   def index
     @comments = Comment.all
-
     render json: @comments
   end
 
@@ -47,6 +48,6 @@ class CommentsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def comment_params
-      params.require(:comment).permit(:username, :comment)
+      params.require(:comment).permit(:username, :user_comments)
     end
 end
