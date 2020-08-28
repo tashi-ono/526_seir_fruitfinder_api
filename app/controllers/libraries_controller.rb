@@ -3,7 +3,7 @@ class LibrariesController < ApplicationController
 
   # GET /libraries (and show related comments)
   def index
-    @libraries = Library.all
+    @libraries = Library.all.order(:lat)
 
     render json: @libraries.to_json(include: :comments)
   end
